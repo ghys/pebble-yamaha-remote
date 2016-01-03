@@ -1,24 +1,133 @@
 {
-  "uuid": "a2ae5e8d-42b0-4f63-a967-b9fe6d1dfeaa",
-  "shortName": "slate-example",
-  "longName": "slate-example",
-  "companyName": "MakeAwesomeHappen",
-  "versionLabel": "1.0",
-  "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt", "chalk"],
-  "watchapp": {
-    "watchface": false
-  },
-  "capabilities": [
-    "configurable"
-  ],
-  "appKeys": {
-    "KEY_COLOR_RED": 0,
-    "KEY_COLOR_GREEN": 1,
-    "KEY_COLOR_BLUE": 2,
-    "KEY_HIGH_CONTRAST": 3
-  },
-  "resources": {
-    "media": []
-  }
+    "appKeys": {
+        "DATA_REQUEST": 1,
+        "DSP_PROGRAM": 7,
+        "ERROR": 0,
+        "INPUT_COUNT": 200,
+        "INPUT_NAME": 6,
+        "INPUT_TITLE": 5,
+        "MUTE": 4,
+        "MUTE_TOGGLE": 13,
+        "PAUSE": 902,
+        "PLAY": 903,
+        "PLAYBACK_ELAPSED": 10,
+        "PLAYBACK_MAIN": 8,
+        "PLAYBACK_STATUS": 14,
+        "PLAYBACK_SUB": 9,
+        "POWER": 2,
+        "POWER_TOGGLE": 999,
+        "SCENE_COUNT": 100,
+        "SET_DSP_PROGRAM": 399,
+        "SET_SCENE": 199,
+        "SKIP_FWD": 901,
+        "SKIP_REV": 900,
+        "VOLUME": 3,
+        "VOLUME_DOWN": 12,
+        "VOLUME_UP": 11
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "YS",
+    "longName": "Yamaha AV Remote",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/play.png",
+                "name": "ICON_PLAY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/skip-rev.png",
+                "name": "ICON_SKIP_REV",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/skip-fwd.png",
+                "name": "ICON_SKIP_FWD",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/pause.png",
+                "name": "ICON_PAUSE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/volume-mute.png",
+                "name": "ICON_VOLUME_MUTE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/volume-up.png",
+                "name": "ICON_VOLUME_UP",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/volume-down.png",
+                "name": "ICON_VOLUME_DOWN",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Note.png",
+                "name": "ICON_DSP",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Album.png",
+                "name": "ICON_SONG",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Microphone.png",
+                "name": "ICON_INPUT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Photo.png",
+                "name": "ICON_SCENE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Volume-Off.png",
+                "name": "ICON_VOLUMEMUTED",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Volume-On.png",
+                "name": "ICON_VOLUME",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Power.png",
+                "name": "ICON_POWER",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Yamaha AV Remote",
+    "targetPlatforms": [
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "1cca19a7-c23d-4fb0-9043-8e3a9d3d9c4f",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
 }
