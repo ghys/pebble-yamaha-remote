@@ -6,15 +6,8 @@ static ActionMenuLevel *s_root_level, *s_input_level;
 
 /********************************* ActionMenu *********************************/
 
-static char scenebuffer[50][2][25];
-static char inputbuffer[50][2][25];
-
-static void action_performed_callback(ActionMenu *action_menu, const ActionMenuItem *action, void *context) {
-  // An action was selected, determine which one
-  //s_current_type = (char *)action_menu_item_get_action_data(action);
-
-  // change scene or input
-}
+static char scenebuffer[25][2][20];
+static char inputbuffer[25][2][20];
 
 static void set_scene(ActionMenu *action_menu, const ActionMenuItem *action, void *context) {
   char *scene = (char *)action_menu_item_get_action_data(action);

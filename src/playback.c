@@ -54,15 +54,6 @@ static void pause() {
   dict_write_end(iter); 
   app_message_outbox_send(); 
 }
-static void play() {
-  APP_LOG(APP_LOG_LEVEL_INFO, "Play");
-  DictionaryIterator *iter; 
-  uint8_t value = 1; 
-  app_message_outbox_begin(&iter); 
-  dict_write_int(iter, KEY_PLAY, &value, 1, true); 
-  dict_write_end(iter); 
-  app_message_outbox_send(); 
-}
 
 void click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_DOWN, skip_fwd);

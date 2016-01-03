@@ -39,14 +39,6 @@ static GBitmap *s_song_icon;
 static GBitmap *s_input_icon;
 static GBitmap *s_dsp_icon;
 
-static bool gcolor_is_dark(GColor color) {
-#if defined(PBL_BW)
-  return gcolor_equal(color, GColorBlack);
-#elif defined(PBL_COLOR)
-  return color.r < 2 && color.g < 2 && color.b < 2;
-#endif
-}
-
 static Tuple *s_error;
 static Tuple *s_power;
 static Tuple *s_volume;
@@ -58,7 +50,6 @@ static Tuple *s_playback_main;
 static Tuple *s_playback_sub;
 static Tuple *s_playback_elapsed;
 static Tuple *s_playback_status;
-
 
 
 /***** Main menu *****/
@@ -191,7 +182,7 @@ static void menu_unload(Window *window) {
 /* App message callback */
 
 static void inbox_received_handler(DictionaryIterator *iter, void *context) {
-
+  APP_LOG(APP_LOG_LEVEL_INFO, "data received");
   s_error = dict_find(iter, KEY_ERROR);
   s_power = dict_find(iter, KEY_POWER);
   s_volume = dict_find(iter, KEY_VOLUME);
@@ -231,6 +222,10 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
   }
 }
 
+static void inbox_error_handler(AppMessageResult reason, void *context) {
+  APP_LOG(APP_LOG_LEVEL_INFO, "app message inbox failure: %d", reason);
+}
+
 /* Splash window */
 
 static void window_load(Window *window) {
@@ -260,14 +255,17 @@ static void window_unload(Window *window) {
 /* Init */
 
 static void init() {
-  app_message_register_inbox_received(inbox_received_handler);
-  app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
-
   s_main_window = window_create();
   window_set_window_handlers(s_main_window, (WindowHandlers) {
     .load = window_load,
     .unload = window_unload,
   });
+
+  app_message_register_inbox_received(inbox_received_handler);
+  app_message_register_inbox_dropped(inbox_error_handler);
+  app_message_open(1500, 100);
+
+  
   window_stack_push(s_main_window, true);
 }
 

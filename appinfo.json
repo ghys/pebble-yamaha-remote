@@ -122,6 +122,7 @@
     "sdkVersion": "3",
     "shortName": "Yamaha AV Remote",
     "targetPlatforms": [
+        "aplite",
         "basalt",
         "chalk"
     ],

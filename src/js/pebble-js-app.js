@@ -34,7 +34,7 @@ function sendRequest(cmd, payload, callback) {
 
 var send = function (dict) {
   // Send to watchapp
-  console.log(JSON.stringify(dict));
+  //console.log(JSON.stringify(dict));
   Pebble.sendAppMessage(dict, function() {
     //console.log('Send successful: ' + JSON.stringify(dict));
   }, function(e) {
@@ -270,4 +270,5 @@ Pebble.addEventListener('ready', function() {
   
   setInterval(getBasicMainZoneInfo, 3000);
   getBasicMainZoneInfo();
+  
 });
