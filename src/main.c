@@ -182,7 +182,6 @@ static void menu_unload(Window *window) {
 /* App message callback */
 
 static void inbox_received_handler(DictionaryIterator *iter, void *context) {
-  APP_LOG(APP_LOG_LEVEL_INFO, "data received");
   s_error = dict_find(iter, KEY_ERROR);
   s_power = dict_find(iter, KEY_POWER);
   s_volume = dict_find(iter, KEY_VOLUME);
