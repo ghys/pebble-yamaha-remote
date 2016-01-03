@@ -1,33 +1,23 @@
-# slate-config-example
+# Yamaha AV Remote (for Pebble smartwatches)
 
-Example app demonstrating the use of the 
-[Slate front-end framework](https://github.com/pebble/slate) to create a good-looking
-[app configuration](http://developer.getpebble.com/guides/pebble-apps/pebblekit-js/app-configuration/) 
-page. 
+A simple control watchapp for the basic functions of your network-enabled Yamaha AV receiver. Never look for the remote again!
 
-The page is styled with the Slate library, with classes selected for `<div>`
-elements, including many control types such as:
+Tested on a RX-V479 but should work on all models compatible with the official AV CONTROLLER smartphone app using the YNC/A protocol.
 
-* Text fields
-* Buttons
-* Color pickers
-* Tab bars
-* Toggles
-* Checkboxes
-* Radio buttons
-* Date and time pickers
-* Sliders
-* Draggable lists
+This watchapp is unofficial and not endorsed or supported by Yamaha.
 
-The example implemented here uses two of these components to implement color
-options into a Pebble app. Using the config page it is possible to choose a
-background color (with foreground color automatically determined for
-visibility), or a high-contrast mode that overrides the colors chosen to promote
-readability.
+Features:
+- Power toggle - standby/on (1)
+- Volume control & mute
+- 2-click preset scene launch, or manual input selection (HDMI, Spotify, Pandora, Airplay, Sirius, Net Radio, USB, Bluetooth, UPnP, Tuner...) (2)
+- DSP program selection
+- Basic playback control & info - previous track, next track, play/pause (if supported by the source)
+- Near real-time status updates, no need to refresh manually
 
-![screenshot2](screenshots/screenshot2.png)
+Not supported:
+- Multiple devices or multiple zones
+- Source browsing (menus)
+- Advanced sound & video settings
 
-The result of hitting 'Submit' in the config page when the app is installed
-results in the following app look and feel:
-
-![screensho1](screenshots/screenshot1.png)
+(1) Ensure the 'Network Standby' feature is activated to be able to control/turn on the device when in standby mode.
+(2) The available scenes & inputs are retrieved from the device configuration and may differ depending on the settings, the model and market availability.
