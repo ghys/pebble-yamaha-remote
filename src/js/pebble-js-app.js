@@ -88,6 +88,86 @@ var getBasicMainZoneInfo = function(noaddlinfo) {
             send(dict);
           }
         });
+      } else if (!noaddlinfo && input_name == "Spotify") {
+        sendRequest("GET", "<Spotify><Play_Info>GetParam</Play_Info></Spotify>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Track");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = '';
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "Napster") {
+        sendRequest("GET", "<Napster><Play_Info>GetParam</Play_Info></Napster>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Track");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = '';
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "JUKE") {
+        sendRequest("GET", "<JUKE><Play_Info>GetParam</Play_Info></JUKE>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Track");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = '';
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "Pandora") {
+        sendRequest("GET", "<Pandora><Play_Info>GetParam</Play_Info></Pandora>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Track");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = '';
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "Bluetooth") {
+        sendRequest("GET", "<Bluetooth><Play_Info>GetParam</Play_Info></Bluetooth>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Song");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = basicNodeValue(playdata, "Elapsed");
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "MusicCast Link") {
+        sendRequest("GET", "<MusicCast_Link><Play_Info>GetParam</Play_Info></MusicCast_Link>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Song");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = basicNodeValue(playdata, "Elapsed");
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "AirPlay") {
+        sendRequest("GET", "<AirPlay><Play_Info>GetParam</Play_Info></AirPlay>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Song");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = basicNodeValue(playdata, "Elapsed");
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
+      } else if (!noaddlinfo && input_name == "USB") {
+        sendRequest("GET", "<USB><Play_Info>GetParam</Play_Info></USB>", function (playerr, playdata) {
+          if (playdata) {
+            dict["PLAYBACK_MAIN"] = basicNodeValue(playdata, "Song");
+            dict["PLAYBACK_SUB"] = basicNodeValue(playdata, "Artist");
+            dict["PLAYBACK_ELAPSED"] = basicNodeValue(playdata, "Elapsed");
+            dict["PLAYBACK_STATUS"] = basicNodeValue(playdata, "Playback_Info");
+            send(dict);
+          }
+        });
       } else {
         send(dict);
       }
@@ -212,6 +292,10 @@ Pebble.addEventListener("appmessage", function(e) {
     setVolume('Up');
   } else if (e.payload['VOLUME_DOWN']) {
     setVolume('Down');
+  } else if (e.payload['VOLUME_UP_LONG']) {
+    setVolume('Up 5 dB');
+  } else if (e.payload['VOLUME_DOWN_LONG']) {
+    setVolume('Down 5 dB');
   } else if (e.payload['MUTE_TOGGLE']) {
     muteToggle();
   } else if (e.payload['SET_SCENE']) {

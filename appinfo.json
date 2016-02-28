@@ -21,21 +21,37 @@
         "SET_SCENE": 199,
         "SKIP_FWD": 901,
         "SKIP_REV": 900,
+        "SWITCH_INPUT": 299,
         "VOLUME": 3,
         "VOLUME_DOWN": 12,
-        "VOLUME_UP": 11
+        "VOLUME_DOWN_LONG": 22,
+        "VOLUME_UP": 11,
+        "VOLUME_UP_LONG": 21
     },
     "capabilities": [
         "configurable"
     ],
     "companyName": "YS",
+    "enableMultiJS": false,
     "longName": "Yamaha AV Remote",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "images/play.png",
-                "name": "ICON_PLAY",
+                "file": "images/volume-up.png",
+                "name": "ICON_VOLUME_UP",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/volume-mute.png",
+                "name": "ICON_VOLUME_MUTE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/volume-down.png",
+                "name": "ICON_VOLUME_DOWN",
                 "targetPlatforms": null,
                 "type": "bitmap"
             },
@@ -52,56 +68,14 @@
                 "type": "bitmap"
             },
             {
+                "file": "images/play.png",
+                "name": "ICON_PLAY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
                 "file": "images/pause.png",
                 "name": "ICON_PAUSE",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/volume-mute.png",
-                "name": "ICON_VOLUME_MUTE",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/volume-up.png",
-                "name": "ICON_VOLUME_UP",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/volume-down.png",
-                "name": "ICON_VOLUME_DOWN",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Note.png",
-                "name": "ICON_DSP",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Album.png",
-                "name": "ICON_SONG",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Microphone.png",
-                "name": "ICON_INPUT",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Photo.png",
-                "name": "ICON_SCENE",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Volume-Off.png",
-                "name": "ICON_VOLUMEMUTED",
                 "targetPlatforms": null,
                 "type": "bitmap"
             },
@@ -112,8 +86,38 @@
                 "type": "bitmap"
             },
             {
+                "file": "images/Volume-Off.png",
+                "name": "ICON_VOLUMEMUTED",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
                 "file": "images/Power.png",
                 "name": "ICON_POWER",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Photo.png",
+                "name": "ICON_SCENE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Note.png",
+                "name": "ICON_DSP",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Microphone.png",
+                "name": "ICON_INPUT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Album.png",
+                "name": "ICON_SONG",
                 "targetPlatforms": null,
                 "type": "bitmap"
             }

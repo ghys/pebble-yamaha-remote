@@ -31,12 +31,30 @@ static void volume_down() {
   dict_write_end(iter); 
   app_message_outbox_send(); 
 }
+static void volume_down_long() {
+  APP_LOG(APP_LOG_LEVEL_INFO, "Volume down (long)");
+  DictionaryIterator *iter; 
+  uint8_t value = 1; 
+  app_message_outbox_begin(&iter); 
+  dict_write_int(iter, KEY_VOLUME_DOWN_LONG, &value, 1, true); 
+  dict_write_end(iter); 
+  app_message_outbox_send(); 
+}
 static void volume_up() {
   APP_LOG(APP_LOG_LEVEL_INFO, "Volume up");
   DictionaryIterator *iter; 
   uint8_t value = 1; 
   app_message_outbox_begin(&iter); 
   dict_write_int(iter, KEY_VOLUME_UP, &value, 1, true); 
+  dict_write_end(iter); 
+  app_message_outbox_send(); 
+}
+static void volume_up_long() {
+  APP_LOG(APP_LOG_LEVEL_INFO, "Volume up (long)");
+  DictionaryIterator *iter; 
+  uint8_t value = 1; 
+  app_message_outbox_begin(&iter); 
+  dict_write_int(iter, KEY_VOLUME_UP_LONG, &value, 1, true); 
   dict_write_end(iter); 
   app_message_outbox_send(); 
 }
@@ -54,6 +72,8 @@ void playback_click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_DOWN, volume_down);
   window_single_click_subscribe(BUTTON_ID_UP, volume_up);
   window_single_click_subscribe(BUTTON_ID_SELECT, volume_toggle_mute);
+  window_long_click_subscribe(BUTTON_ID_DOWN, 0, volume_down_long, NULL);
+  window_long_click_subscribe(BUTTON_ID_UP, 0, volume_up_long, NULL);
 }
 
 static void window_load(Window *window) {
