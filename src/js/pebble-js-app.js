@@ -307,7 +307,7 @@ Pebble.addEventListener("appmessage", function(e) {
   } else if (e.payload['SKIP_REV']) {
     playbackControl('Skip Rev');
   } else if (e.payload['SKIP_FWD']) {
-    playbackControl('Skip Rev');
+    playbackControl('Skip Fwd');
   } else if (e.payload['PAUSE']) {
     playbackControl('Pause');
   } else if (e.payload['PLAY']) {
