@@ -1,7 +1,7 @@
 var options = JSON.parse(localStorage.getItem('options'));
 
 Pebble.addEventListener('showConfiguration', function() {
-  var url = 'https://rawgit.com/ghys/pebble-yamaha-remote/master/config/index.html';
+  var url = 'https://raw.githack.com/ghys/pebble-yamaha-remote/master/config/index.html';
   console.log('Showing configuration page: ' + url);
 
   Pebble.openURL(url);
